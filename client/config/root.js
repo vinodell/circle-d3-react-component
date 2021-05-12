@@ -7,7 +7,7 @@ import store, { history } from '../redux'
 
 import Startup from './startup'
 
-import Dummy from '../components/dummy'
+import MyCircle from '../components/circle'
 import Main from '../components/main'
 
 const OnlyAnonymousRoute = ({ component: Component, ...rest }) => {
@@ -32,7 +32,7 @@ const Root = () => {
       <ConnectedRouter history={history}>
         <Startup>
           <Switch>
-            <Route exact path="/" component={() => <Dummy />} />
+            <Route exact path="/" component={() => <MyCircle />} />
             <OnlyAnonymousRoute exact path="/anonymous" component={() => <Main />} />
             <PrivateRoute exact path="/private" component={() => <Main />} />
           </Switch>
